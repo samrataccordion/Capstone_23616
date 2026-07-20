@@ -1,0 +1,57 @@
+version: 2
+
+models:
+  - name: silver_product
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: brand
+        tests:
+          - not_null
+
+      - name: category
+        tests:
+          - not_null
+
+      - name: subcategory
+        tests:
+          - not_null
+
+      - name: supplier_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('silver_supplier')
+                field: supplier_id
+
+      - name: launch_date
+        tests:
+          - not_null
+
+      - name: cost_price
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+      - name: stock_quantity
+        tests:
+          - not_null
+
+      - name: reorder_level
+        tests:
+          - not_null
+
+      - name: is_featured
+        tests:
+          - not_null

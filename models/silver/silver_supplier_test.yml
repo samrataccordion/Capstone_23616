@@ -1,0 +1,88 @@
+version: 2
+
+models:
+  - name: silver_supplier
+    columns:
+      - name: supplier_id
+        tests:
+          - unique
+          - not_null
+
+      - name: supplier_name
+        tests:
+          - not_null
+
+      - name: supplier_type
+        tests:
+          - not_null
+
+      - name: tax_id
+        tests:
+          - unique
+
+
+      - name: preferred_carrier
+        tests:
+          - not_null
+
+      - name: payment_terms
+        tests:
+          - not_null
+
+      - name: credit_rating
+        tests:
+          - not_null
+
+      - name: is_active
+        tests:
+          - not_null
+
+      - name: lead_time_days
+        tests:
+          - not_null
+
+      - name: minimum_order_quantity
+        tests:
+          - not_null
+
+      - name: year_established
+        tests:
+          - not_null
+
+      - name: contact_person
+        tests:
+          - not_null
+
+      - name: email
+        tests:
+          - unique
+
+      - name: contract_id
+        tests:
+          - not_null
+          
+      - name: contract_start_date
+        tests:
+          - not_null
+
+      - name: contract_end_date
+        tests:
+          - not_null
+
+      - name: exclusivity
+        tests:
+          - not_null
+
+      - name: renewal_option
+        tests:
+          - not_null
+
+      - name: quality_rating
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Excellent
+                  - Good
+                  - Average
+                  - Poor

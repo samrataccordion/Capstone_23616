@@ -1,0 +1,51 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: CT_SAMRAT_PATIL_DB
+    schema: CAPSTONE_23616
+
+    config:
+        freshness:
+            warn_after:
+              count: 1
+              period: day
+            error_after:
+              count: 2
+              period: day
+        loaded_at_field: _loaded_at
+
+    tables:
+        - name: EX_CUSTOMER
+        - name: EX_PRODUCT
+        - name: EX_SUPPLIER
+        - name: EX_EMPLOYEE
+        - name: EX_ORDERS
+        - name: EX_STORE
+        - name: EX_CAMPAIGN
+
+  - name: silver
+    database: CT_SAMRAT_PATIL_DB
+    schema: BRONZE
+
+    tables:
+        - name: BRONZE_CUSTOMER
+        - name: BRONZE_PRODUCT
+        - name: BRONZE_SUPPLIER
+        - name: BRONZE_EMPLOYEE
+        - name: BRONZE_ORDERS
+        - name: BRONZE_STORE 
+        - name: BRONZE_CAMPAIGN
+
+  - name: gold
+    database: CT_SAMRAT_PATIL_DB
+    schema: SILVER
+
+    tables:
+        - name: SILVER_CUSTOMER
+        - name: SILVER_PRODUCT
+        - name: SILVER_SUPPLIER
+        - name: SILVER_EMPLOYEE
+        - name: SILVER_ORDERS
+        - name: SILVER_STORES
+        - name: SILVER_CAMPAIGN

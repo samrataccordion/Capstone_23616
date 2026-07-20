@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: dim_product
+
+    columns:
+      - name: product_key
+        description: Surrogate key, unique per product.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: Natural key from the source system.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: category
+        tests:
+          - not_null
+          
+      - name: subcategory
+        tests:
+          - not_null
+      - name: brand
+        tests:
+          - not_null
+      - name: color
+        tests:
+          - not_null
+      - name: size
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+      - name: cost_price
+        tests:
+          - not_null
+

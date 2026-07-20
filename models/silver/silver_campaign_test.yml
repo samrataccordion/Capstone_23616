@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: silver_campaign
+    columns:
+      - name: campaign_id
+        tests:
+          - unique
+          - not_null
+
+      - name: campaign_name
+        tests:
+          - not_null
+
+      - name: campaign_type
+        tests:
+          - not_null
+
+      - name: channel
+        tests:
+          - not_null
+
+      - name: start_date
+        tests:
+          - not_null
+
+      - name: end_date
+        tests:
+          - not_null
+
+      - name: budget
+        tests:
+          - not_null
+
+      - name: total_cost
+        tests:
+          - not_null
+
+      - name: total_revenue
+        tests:
+          - not_null

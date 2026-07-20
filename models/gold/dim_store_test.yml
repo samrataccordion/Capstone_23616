@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: dim_store
+    description: >
+      Gold layer store dimension. SCD Type 1 — one row per store, always
+      reflecting the latest attribute values (no history is retained on change).
+    columns:
+      - name: store_key
+        description: Surrogate key, unique per store.
+        tests:
+          - unique
+          - not_null
+
+      - name: store_id
+        description: Natural key from the source system.
+        tests:
+          - unique
+          - not_null
+
+      - name: store_name
+        tests:
+          - not_null
+
+      - name: address
+
+      - name: region
+        tests:
+          - not_null
+
+      - name: store_type
+        tests:
+          - not_null
+
+      - name: opening_date
+        tests:
+          - not_null
+
+      - name: size_category

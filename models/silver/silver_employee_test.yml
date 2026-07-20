@@ -1,0 +1,72 @@
+version: 2
+
+models:
+  - name: silver_employee
+    columns:
+      - name: employee_id
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        tests:
+          - not_null
+
+      - name: last_name
+        tests:
+          - not_null
+
+      - name: email
+        tests:
+          - unique
+
+      - name: hire_date
+        tests:
+          - not_null
+
+      - name: department
+        tests:
+          - not_null
+
+      - name: role
+        tests:
+          - not_null
+
+      - name: employment_status
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Active
+                  - Inactive
+                  - Terminated
+                  - On Leave
+
+      - name: manager_id
+        tests:
+            - relationships:
+                arguments:
+                    to: ref('silver_employee')
+                    field: employee_id
+                config:
+                    where: "manager_id is not null"
+
+      - name: salary
+        tests:
+          - not_null
+
+      - name: performance_rating
+        tests:
+          - not_null
+
+      - name: state
+        tests:
+          - not_null
+
+      - name: employment_status
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Active
+                  - Inactive

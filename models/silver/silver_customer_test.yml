@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: silver_customer
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: first_name
+        tests:
+          - not_null
+
+      - name: last_name
+        tests:
+          - not_null
+
+      - name: email
+        tests:
+          - not_null
+
+      - name: registration_date
+        tests:
+          - not_null
+
+      - name: loyalty_tier
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - BRONZE
+                  - SILVER
+                  - GOLD
+                  - PLATINUM
+
+      - name: preferred_communication
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Email
+                  - Phone
+                  - Sms
+                  - Mail
+
+      - name: marketing_opt_in
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - TRUE
+                  - FALSE
+
+      - name: total_purchases
+        tests:
+          - not_null
+
+      - name: total_spend
+        tests:
+          - not_null
+
+      - name: country
+        tests:
+          - not_null
+      
+      - name: customer_segment
+        tests:
+          - accepted_values:
+              arguments:
+                values:
+                  - Young
+                  - Middle-aged
+                  - Senior
+                  - Unknown
+
+      - name: full_name
+        tests:
+          - not_null
