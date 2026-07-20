@@ -5,9 +5,6 @@
     )
 }}
 
--- Uses fact_sales.customer_segment_impact directly (already denormalized from
--- DIM_Customer.segment at fact build time), so no extra join to dim_customer
--- is needed for this one.
 
 with fact as (
 

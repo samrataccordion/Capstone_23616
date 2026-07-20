@@ -50,3 +50,6 @@ models:
     gold:
       +schema: Gold
       +materialized: table
+    reporting:
+      +schema: reporting
+      +materialized: view

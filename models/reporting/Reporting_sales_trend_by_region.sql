@@ -5,7 +5,6 @@
     )
 }}
 
--- Monthly sales trend, sliced by region (sourced from fact_sales, denormalized from DIM_Store).
 
 with fact as (
 

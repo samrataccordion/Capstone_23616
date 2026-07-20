@@ -5,7 +5,6 @@
     )
 }}
 
--- Total sales, profit, and per-employee averages rolled up by employee role.
 
 with fact as (
 

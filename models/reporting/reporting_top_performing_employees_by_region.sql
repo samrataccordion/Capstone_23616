@@ -5,9 +5,6 @@
     )
 }}
 
--- Ranks employees by total sales WITHIN their region (partitioned rank), not
--- globally — so each region has its own #1, #2, etc.
--- An employee selling across multiple regions gets one row per region.
 
 with fact as (
 

@@ -5,7 +5,6 @@
     )
 }}
 
--- Total sales, cost, and profit rolled up by product category / subcategory.
 
 with fact as (
 

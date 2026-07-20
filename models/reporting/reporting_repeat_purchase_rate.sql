@@ -5,11 +5,6 @@
     )
 }}
 
--- DESIGN NOTE: this view is at customer grain with an is_repeat_customer flag,
--- rather than pre-aggregating to a single overall rate — that way it can be
--- sliced by segment, region, etc. in your BI tool. To get the overall repeat
--- purchase rate: avg(is_repeat_customer::int) or
--- count(*) filter (where is_repeat_customer) / count(*).
 
 with fact as (
 

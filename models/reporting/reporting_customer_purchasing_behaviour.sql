@@ -5,12 +5,7 @@
     )
 }}
 
--- ASSUMPTION: dim_customer has customer_key, customer_id — adjust if dim_customer
--- isn't built yet or uses different column names.
---
--- fact_sales is at line-item grain, so orders are collapsed to order grain first
--- (one row per order_id) before aggregating up to the customer level — otherwise
--- order counts and average order value would be inflated by multi-line orders.
+
 
 with fact as (
 
