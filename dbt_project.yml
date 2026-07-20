@@ -53,5 +53,3 @@ models:
     reporting:
       +schema: reporting
       +materialized: view
-    elementary:
-      +schema: elementary
